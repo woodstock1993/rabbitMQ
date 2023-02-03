@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  rabbitmq3:
+    container_name: "test_rabbit"
+    image: rabbitmq:3-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest1
+      - RABBITMQ_DEFAULT_PASS=guest1
+    ports:
+      # AMQP protocol port
+      - '5673:5673'
+      # HTTP management UI
+      - '15673:15673'
